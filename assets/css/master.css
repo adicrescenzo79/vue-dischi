@@ -366,7 +366,8 @@ header{
   text-align: center;
 
   flex-shrink: 1;
-  flex-basis: 175px;
+  min-width: 200px;
+  max-width: 250px;
 }
 
 #central img{

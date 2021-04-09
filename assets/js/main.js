@@ -6,6 +6,8 @@ var app = new Vue({
     disks: [],
     infoIndex: '',
     info: false,
+    genres: [],
+    genreChosen: '',
   },
   mounted() {
     axios
@@ -13,7 +15,18 @@ var app = new Vue({
     .then((response) => {
       let result = response.data.response;
       this.disks = result;
+
+      for (var i = 0; i < response.data.response.length; i++) {
+        let genre = response.data.response[i].genre;
+        if (!(this.genres.includes(genre))) {
+          this.genres.push(genre);
+        }
+      }
     });
+
+
+
+
   },
   methods: {
     getInfo: function(i){
@@ -24,9 +37,12 @@ var app = new Vue({
     closeInfo: function(){
       this.infoIndex = '';
       this.info = false;
-
+    },
+    chooseGenre: function(genre){
+      this.genreChosen = genre;
     }
-  }
+
+  },
 })
 
 // METODO VUE PER LA RICHIESTA DI API
