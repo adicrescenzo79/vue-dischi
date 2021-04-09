@@ -210,10 +210,13 @@ aside .playlist span:first-child{
   color: #fff;
 }
 
-aside .playlist a{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+aside .playlist select{
+  margin: 0 auto;
+  width: 90%;
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  border: none;
 }
 
 aside .playlist a span{
@@ -354,10 +357,8 @@ header{
 }
 
 #central .dischi{
-  margin: 10px auto;
-
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -366,8 +367,7 @@ header{
   text-align: center;
 
   flex-shrink: 1;
-  min-width: 200px;
-  max-width: 250px;
+  width: calc(100% / 5 - 20px);
 }
 
 #central img{
@@ -616,9 +616,19 @@ footer .vol input[type=range] {
     height: 100px;
   }
 
+  #central .disco{
+    margin: 10px;
+    text-align: center;
+
+    flex-shrink: 1;
+    width: calc(100% / 3 - 20px);
+  }
+
+
 }
 
 /* xs */
+
 @media all and (max-width: 767px){
   aside{
     width: 50px;
@@ -662,9 +672,13 @@ footer .vol input[type=range] {
     width: calc(100vw - 50px);
   }
 
-  /* footer .player{
-    width: 206px;
-  } */
+  #central .disco{
+    margin: 10px;
+    text-align: center;
+
+    flex-shrink: 1;
+    width: calc(100% / 2 - 20px);
+  }
 
   footer .player .duration{
     padding-top: 30px;

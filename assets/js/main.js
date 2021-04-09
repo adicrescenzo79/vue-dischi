@@ -30,7 +30,6 @@ var app = new Vue({
   },
   methods: {
     getInfo: function(i){
-      console.log(i);
       this.infoIndex = i;
       this.info = true;
     },
@@ -38,9 +37,9 @@ var app = new Vue({
       this.infoIndex = '';
       this.info = false;
     },
-    chooseGenre: function(genre){
-      this.genreChosen = genre;
-    }
+    // chooseGenre: function(genre){
+    //   this.genreChosen = genre;
+    // }
 
   },
 })

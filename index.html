@@ -57,19 +57,14 @@
             </div>
 
             <div class="playlist">
-              <span class="text-uppercase">playlist</span>
-              <a href="#" >
-                <i class="fas fa-plus-square"></i>
-                <span>crea playlist</span>
-              </a>
-              <a href="#">nome playlist</a>
-              <a href="#">nome playlist</a>
-              <a href="#">nome playlist</a>
-              <a href="#">nome playlist</a>
-              <a href="#">nome playlist</a>
-              <a href="#">nome playlist</a>
-              <a href="#">nome playlist</a>
+              <span class="text-uppercase">choose your genre</span>
+                <select v-model="genreChosen" class="" name="">
+                  <option value="">All Genres</option>
+                  <option v-for="genre in genres" >{{genre}}</option>
+                </select>
+
             </div>
+
           </div>
 
           <div class="bottom">
@@ -97,13 +92,10 @@
 
             <nav class="text-uppercase">
               <a @click="genreChosen = ''" href="#">ALL GENRES</a>
-              <a @click="chooseGenre(genre)" v-for="genre in genres" href="#">{{genre}}</a>
+              <a @click="genreChosen = genre" v-for="genre in genres" href="#">{{genre}}</a>
             </nav>
 
             <div id="recenti">
-              <section class="sector">
-                <h2>Recently played</h2>
-              </section>
                   <div class="dischi">
                     <div v-if="disk.genre.includes(genreChosen)" @click="getInfo(i)" class="disco" v-for="(disk, i) in disks">
                       <div class="play">
