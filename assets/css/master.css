@@ -630,6 +630,27 @@ footer .vol input[type=range] {
 /* xs */
 
 @media all and (max-width: 767px){
+
+  .disk-info{
+    flex-direction: column;
+  }
+
+  .disk-info .info{
+    justify-content: flex-start;
+  }
+
+  .disk-info .info *{
+    margin: 5px;
+  }
+
+  .disk-info .info i {
+    font-size: 40px;
+    position: inherit;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+
   aside{
     width: 50px;
   }
