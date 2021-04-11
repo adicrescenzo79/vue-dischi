@@ -14,19 +14,17 @@ var app = new Vue({
     .get('https://flynn.boolean.careers/exercises/api/array/music')
     .then((response) => {
       let result = response.data.response;
-      this.disks = result;
+
+      this.disks = this.sortedResult(result);
 
       for (var i = 0; i < response.data.response.length; i++) {
         let genre = response.data.response[i].genre;
         if (!(this.genres.includes(genre))) {
           this.genres.push(genre);
         }
-      }
+      };
+
     });
-
-
-
-
   },
   methods: {
     getInfo: function(i){
@@ -37,9 +35,11 @@ var app = new Vue({
       this.infoIndex = '';
       this.info = false;
     },
-    // chooseGenre: function(genre){
-    //   this.genreChosen = genre;
-    // }
+    sortedResult: function(arr) {
+      return arr.slice().sort(function(a, b) {
+        return a.year - b.year;
+      });
+    }
 
   },
 })
